@@ -1,0 +1,8 @@
+# Here we provide 2 python script to visulize the specific phonon mode.
+
+# There is a really great website to visualize the whole phonon band path
+	- Link:	https://henriquemiranda.github.io/phononwebsite/phonon.html
+
+# To visualize the phonon mode one needs to create a displacements file in xyz format by reading the eigenvectors from the phonon_band.hdf5 file generate using phononpy.
+
+# Read the xyz file using ovito and read the 3 extra displacement columns as displacement.X, displacement.Y, and displacement.Z

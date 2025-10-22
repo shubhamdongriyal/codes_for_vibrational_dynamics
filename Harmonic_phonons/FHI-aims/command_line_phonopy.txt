@@ -1,0 +1,23 @@
+### Computing the harmonic phonons using the Phonopy with FHI-aims as an force calculator
+	- control.in (DFT parameters)
+	- gemeotry.in (relaxed input geoemtry in FHI-aims format)
+
+# Phonopy calculation parameter:
+	phonopy -d --dim="2 2 2" --tolerance=1e-4 --aims
+
+# Wait for single point calculations
+	phonopy -f disp-???/aims.out # Create FORCESET file
+
+# Create a mesh.conf file copy below parameters
+'''
+DIM = 2 2 2
+BAND =  0.0 0.0 0.0  0.0 0.5 0.0  0.0 0.5 0.5  0.0 0.0 0.5  0.0 0.0 0.0  -0.5 0.0 0.5  -0.5 0.5 0.5  0.0 0.5 0.0  -0.5 0.5 0.0  -0.5 0.0 0.0  0.0 0.0 0.0     
+BAND_POINTS = 60
+EIGENVECTORS = .TRUE.
+HDF5 = .TRUE.
+BAND_CONNECTION = .TRUE5
+'''
+
+# Compute harmonic phonons
+	phonopy -s mesh.conf --tolerance=1e-4 >> phonopy.out
+	- for saving plot also use -p flag before -s
