@@ -1,0 +1,1 @@
+Following are the codes for computing the harmonic and anharmoic spectra for molecular crystals and host-guest system used in the work Shubham, Burak et. al. https://www.nature.com/articles/s41524-025-01825-w 
